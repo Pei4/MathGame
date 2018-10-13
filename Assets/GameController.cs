@@ -40,31 +40,34 @@ public class GameController : MonoBehaviour {
             randomOperator = "*";
             answer = a * b;
         }
-        int option = Random.Range(0, 3);
+        option = Random.Range(0, 3);
         string questionText = a + " " + randomOperator + " " + b + " is ?";
         question.GetComponent<TextMesh>().text = questionText;
+        option1.GetComponent<TextMesh>().color = Color.white;
+        option2.GetComponent<TextMesh>().color = Color.white;
+        option3.GetComponent<TextMesh>().color = Color.white;
         if (option == 0)
         {
             option1.GetComponent<TextMesh>().text = answer.ToString();
-            option2.GetComponent<TextMesh>().text = (answer + Random.Range(0, 2)).ToString();
-            option3.GetComponent<TextMesh>().text = (answer + Random.Range(2, 4)).ToString();
+            option2.GetComponent<TextMesh>().text = (answer + Random.Range(1, 3)).ToString();
+            option3.GetComponent<TextMesh>().text = (answer + Random.Range(3, 6)).ToString();
             option1.GetComponent<Option>().isCorrect = true;
             option2.GetComponent<Option>().isCorrect = false;
             option3.GetComponent<Option>().isCorrect = false;
         }
         else if (option == 1)
         {
-            option1.GetComponent<TextMesh>().text = (answer + Random.Range(-2, 0)).ToString();
+            option1.GetComponent<TextMesh>().text = (answer + Random.Range(-3, 0)).ToString();
             option2.GetComponent<TextMesh>().text = answer.ToString();
-            option3.GetComponent<TextMesh>().text = (answer + Random.Range(0, 2)).ToString();
+            option3.GetComponent<TextMesh>().text = (answer + Random.Range(1, 3)).ToString();
             option1.GetComponent<Option>().isCorrect = false;
             option2.GetComponent<Option>().isCorrect = true;
             option3.GetComponent<Option>().isCorrect = false;
         }
         else
         {
-            option1.GetComponent<TextMesh>().text = (answer + Random.Range(-4, -2)).ToString();
-            option2.GetComponent<TextMesh>().text = (answer + Random.Range(-2, 0)).ToString();
+            option1.GetComponent<TextMesh>().text = (answer + Random.Range(-6, -3)).ToString();
+            option2.GetComponent<TextMesh>().text = (answer + Random.Range(-3, 0)).ToString();
             option3.GetComponent<TextMesh>().text = answer.ToString();
             option1.GetComponent<Option>().isCorrect = false;
             option2.GetComponent<Option>().isCorrect = false;
