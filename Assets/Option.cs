@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class Option : MonoBehaviour {
     public bool isCorrect;
-	// Use this for initialization
-	void Start () {
+    public GameObject Core;
+    public GameObject option1;
+    public GameObject option2;
+    public GameObject option3;
+
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
@@ -20,6 +25,18 @@ public class Option : MonoBehaviour {
         }
         else {
             GetComponent<TextMesh>().color = Color.red;
+            if (Core.GetComponent<GameController>().option == 0)
+            {
+                option1.GetComponent<TextMesh>().color = new Color(300, 152, 0, 1);
+                   }
+            else if (Core.GetComponent<GameController>().option == 1)
+            {
+               option2.GetComponent<TextMesh>().color = new Color(255, 152, 0, 1);
+            }
+            else
+            {
+               option3.GetComponent<TextMesh>().color = new Color(255, 152, 0, 1);
+            }
         }
     }
 }
