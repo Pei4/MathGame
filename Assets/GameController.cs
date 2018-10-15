@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameController : MonoBehaviour {
     public string randomOperator;
     public int answer;
-    public int option;
+    public GameObject realAnswer;
     public GameObject question;
     public GameObject option1;
     public GameObject option2;
@@ -40,7 +40,7 @@ public class GameController : MonoBehaviour {
             randomOperator = "*";
             answer = a * b;
         }
-        option = Random.Range(0, 3);
+        int option = Random.Range(0, 3);
         string questionText = a + " " + randomOperator + " " + b + " is ?";
         question.GetComponent<TextMesh>().text = questionText;
         option1.GetComponent<TextMesh>().color = Color.white;
@@ -48,6 +48,7 @@ public class GameController : MonoBehaviour {
         option3.GetComponent<TextMesh>().color = Color.white;
         if (option == 0)
         {
+            realAnswer = option1;
             option1.GetComponent<TextMesh>().text = answer.ToString();
             option2.GetComponent<TextMesh>().text = (answer + Random.Range(1, 3)).ToString();
             option3.GetComponent<TextMesh>().text = (answer + Random.Range(3, 6)).ToString();
@@ -57,6 +58,7 @@ public class GameController : MonoBehaviour {
         }
         else if (option == 1)
         {
+            realAnswer = option2;
             option1.GetComponent<TextMesh>().text = (answer + Random.Range(-3, 0)).ToString();
             option2.GetComponent<TextMesh>().text = answer.ToString();
             option3.GetComponent<TextMesh>().text = (answer + Random.Range(1, 3)).ToString();
@@ -66,6 +68,7 @@ public class GameController : MonoBehaviour {
         }
         else
         {
+            realAnswer = option3;
             option1.GetComponent<TextMesh>().text = (answer + Random.Range(-6, -3)).ToString();
             option2.GetComponent<TextMesh>().text = (answer + Random.Range(-3, 0)).ToString();
             option3.GetComponent<TextMesh>().text = answer.ToString();

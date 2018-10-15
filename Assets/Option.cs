@@ -24,19 +24,8 @@ public class Option : MonoBehaviour {
             GetComponent<TextMesh>().color = Color.green;
         }
         else {
-            if (Core.GetComponent<GameController>().option == 0)
-            {
-                option1.GetComponent<TextMesh>().color = new Color(255, 69, 0, 1);
-                   }
-            else if (Core.GetComponent<GameController>().option == 1)
-            {
-                option2.GetComponent<TextMesh>().color = new Color(255, 69, 0, 1);
-            }
-            else
-            {
-                option3.GetComponent<TextMesh>().color = new Color(255, 69, 0, 1);
-            }
             GetComponent<TextMesh>().color = Color.red;
+            Core.GetComponent<GameController>().realAnswer.GetComponent<TextMesh>().color = new Color(255, 69, 0, 1);
         }
     }
 }
