@@ -5,9 +5,6 @@ using UnityEngine;
 public class Option : MonoBehaviour {
     public bool isCorrect;
     public GameObject Core;
-    public GameObject option1;
-    public GameObject option2;
-    public GameObject option3;
 
     // Use this for initialization
     void Start () {
